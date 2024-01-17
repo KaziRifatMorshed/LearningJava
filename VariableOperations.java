@@ -22,5 +22,7 @@ public class VariableOperations {
         System.out.println(a++ + b++);
         System.out.println(++a + b++);
         System.out.println(STR."now a = \{a} and b = \{b}");
+
+
     }
 }
