@@ -5,7 +5,7 @@ public class VariableOperations {
         float cc = c;
         System.out.println(c);
         System.out.println(cc);
-        // System.out.println("(float)a = ", (float)a, "(int)c = ", (int)cc ); // ERROR
+        // ERROR // System.out.println("(float)a = ", (float)a, "(int)c = ", (int)cc );
         // System.out.println("(float)a = " + (float)a + ", (int)cc = " + (int)cc); // WORKS but BAD
         System.out.println(STR."(float)a = \{(float) a}, (int)cc = \{(int) cc}");
 
