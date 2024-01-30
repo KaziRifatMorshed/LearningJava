@@ -3,14 +3,10 @@ package Lab1;
 import java.util.*;
 
 public class Die_2_Test {
-  
   static Random rand = new Random();
-  
-
     public static void main(String[] args) {
-
       Scanner scan = new Scanner(System.in);
-      System.out.print("Input the number of sides of the two dices and Maximum nember of throws: ");
+      System.out.print("Input the number of sides of the two dices and Maximum number of throws: ");
       int side1 = scan.nextInt();
       int side2 = scan.nextInt();
       int numThrow = scan.nextInt();
