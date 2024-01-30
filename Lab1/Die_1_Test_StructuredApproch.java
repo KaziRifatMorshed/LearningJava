@@ -3,18 +3,16 @@ package Lab1;
 import java.util.*;
 
 public class Die_1_Test_StructuredApproch {
-  
   static Random rand = new Random();
   
   
   public static void main(String[] args) {
-    
     Scanner scan = new Scanner(System.in);
     System.out.print("Input the number of sides of the two dices and Maximum number of throws: ");
     int side1 = scan.nextInt();
     int side2 = scan.nextInt();
     int numThrow = scan.nextInt();
-    System.out.println("Number of snake eyes :"+numSnakeEyes(side1, side2, numThrow));
+    System.out.println(STR."Number of snake eyes :\{numSnakeEyes(side1, side2, numThrow)}");
   }
    
   static int roll(int numSides) {
@@ -33,6 +31,4 @@ public class Die_1_Test_StructuredApproch {
     return count;
   }
   
-}
-
-// working
+} // working

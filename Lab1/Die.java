@@ -2,9 +2,16 @@ package Lab1;
 
 public class Die {
 
-  private final int numFaces;  // maximum face value
-  // private int numFaces;  // maximum face value
+  // private final int numFaces;  // maximum face value
+  private int numFaces;  // maximum face value
   private int faceValue;  // current value showing on the die
+
+
+  // Constructor: Sets the default face value.
+  public Die()  {
+    numFaces = 6;
+    roll();
+  }
 
   //  Constructor: Sets the initial face value.
   public Die(int _numFaces)  {
@@ -18,25 +25,22 @@ public class Die {
     faceValue = _faceValue;
     //roll();
   }
-  
-  ///*
-    // Constructor: Sets the default face value.
-    public Die()  {
-    numFaces = 6;
-    roll();
-  }
-  //*/
 
-    //  Rolls the die
+
+
+  //  Rolls the die
   public void roll() {
     faceValue = (int)(Math.random() * numFaces) + 1;
   }
-  
+
+
   //  Face value setter/mutator.
   public void setFaceValue (int value)  {
-    if (value <= numFaces)
-      faceValue = value;
+    if (value <= numFaces){ // Good practice, condition checking
+        faceValue = value;
+    }
   }
+
   //  Face value getter/accessor.
   public int getFaceValue() {
     return faceValue;
@@ -49,7 +53,6 @@ public class Die {
   
   //  Returns a string representation of this die.
   public String toString() {
-    return "number of Faces " + numFaces +
-      " current face value " + faceValue;
+    return STR."number of Faces: \{numFaces} & current face value: \{faceValue}"; // String template
  }
 }
