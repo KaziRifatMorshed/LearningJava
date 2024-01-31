@@ -11,7 +11,7 @@ public class Dice {
     }
     public Dice(int num_face){
         number_face = num_face;
-    }
+    } // current value default hisebe zero hao
     public Dice(int num_face, int current_face){
         number_face = num_face;
         face_value = current_face;
@@ -20,13 +20,14 @@ public class Dice {
     public void roll(){
         face_value = generator.nextInt(6) + 1;
     }
+
     public void getFaceValue(int newFaceValue){
         if(newFaceValue <= number_face){
             face_value = newFaceValue;
         }
     }
 
-    public int getFaceValue(){ // কেন দরকার ? বুঝি নাই
+    public int getFaceValue(){
         return face_value;
     } // a function(method) to return this value \\      if (die1.getFaceValue() == 1 && die2.getFaceValue() == 1 )
     public int getNumFace(){ // কেন দরকার ? বুঝি নাই
