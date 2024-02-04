@@ -22,6 +22,21 @@ public class Dice_OOP_V2 {
         System.out.println(dice11);
         System.out.println(dice22);
 
+        int sum = 0;
+        sum = dice11.getFaceValue() + dice22.getFaceValue();
+        System.out.println(STR."SUM at first = \{sum}");
+        dice11.roll();
+        dice22.roll();
+        sum = dice11.getFaceValue() + dice22.getFaceValue();
+        System.out.println(STR."SUM after roll = \{sum}");
+        dice11.roll();
+        dice22.roll();
+        sum = dice11.getFaceValue() + dice22.getFaceValue();
+        System.out.println(STR."SUM after roll = \{sum}");
+        dice11.roll();
+        dice22.roll();
+        sum = dice11.getFaceValue() + dice22.getFaceValue();
+        System.out.println(STR."SUM after roll = \{sum}");
 
 
     }
