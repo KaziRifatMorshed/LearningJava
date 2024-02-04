@@ -21,7 +21,8 @@ public class Dice {
         face_value = generator.nextInt(6) + 1;
     }
 
-    public void getFaceValue(int newFaceValue){
+
+    public void setFaceValue(int newFaceValue){
         if(newFaceValue <= number_face){
             face_value = newFaceValue;
         }
@@ -38,4 +39,8 @@ public class Dice {
         return STR."number of faces=\{number_face} && current value=\{face_value}";
     }
 
+    public String printString(){ // কেন দরকার ? বুঝি নাই
+        return STR."number of faces=\{number_face} && current value=\{face_value}";
+    }
+// EOF
 }

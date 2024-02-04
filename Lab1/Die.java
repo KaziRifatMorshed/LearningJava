@@ -35,7 +35,7 @@ public class Die {
 
 
   //  Face value setter/mutator.
-  public void setFaceValue (int value)  {
+  public void setFaceValue (int value)  { // I forgot it
     if (value <= numFaces){ // Good practice, condition checking
         faceValue = value;
     }
