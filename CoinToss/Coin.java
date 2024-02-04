@@ -10,7 +10,8 @@ public class Coin{
     //private boolean face;
     private int face;
 
-  public Coin(){ // eta ki ???
+
+  public Coin(){ // eta constructor
 	flip();
 	}
   public void flip(){
