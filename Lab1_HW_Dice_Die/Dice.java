@@ -6,6 +6,9 @@ public class Dice {
     private int face_value;
     Random generator = new Random();
 
+
+    // Constructor: Sets the default face value.
+    // constructor er kono return type nai
     public Dice(){
         number_face = 6;
     }
