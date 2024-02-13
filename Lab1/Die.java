@@ -23,16 +23,13 @@ public class Die {
   public Die(int _numFaces, int _faceValue)  { // constructor
     numFaces = _numFaces;
     faceValue = _faceValue;
-    //roll();
+    roll();
   }
-
-
 
   //  Rolls the die
   public void roll() {
     faceValue = (int)(Math.random() * numFaces) + 1;
   }
-
 
   //  Face value setter/mutator.
   public void setFaceValue (int value)  {

@@ -1,14 +1,11 @@
 // byKaziRifatMorshed230220
-package Lab1_HW_Dice_Die;
+package Dice_Games;
 import java.util.Random;
 public class Dice {
     private int number_face;
     private int face_value;
     Random generator = new Random();
 
-
-    // Constructor: Sets the default face value.
-    // constructor er kono return type nai
     public Dice(){
         number_face = 6;
     }

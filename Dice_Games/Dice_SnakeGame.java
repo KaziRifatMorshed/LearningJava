@@ -1,4 +1,4 @@
-package Lab1_HW_Dice_Die;
+package Dice_Games;
 
 import java.util.Random;
 import java.util.Scanner;

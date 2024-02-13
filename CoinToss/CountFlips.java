@@ -1,7 +1,5 @@
 package CoinToss;
-
 public class CountFlips {
-
   public static void main(String[] args) { 
     final int NUM_FLIPS = 1000;
     int heads = 0, tails = 0;

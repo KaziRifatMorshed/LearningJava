@@ -1,5 +1,4 @@
 package Lab1;
-
 import java.util.*;
 
 public class Die_2_Test {

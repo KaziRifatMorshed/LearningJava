@@ -1,11 +1,9 @@
 package Lab1;
-
 import java.util.*;
 
 public class Die_1_Test_StructuredApproch {
   static Random rand = new Random();
-  
-  
+
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     System.out.print("Input the number of sides of the two dices and Maximum number of throws: ");
@@ -27,7 +25,6 @@ public class Die_1_Test_StructuredApproch {
       if (face1 == 1 && face2 == 1)
         count++;
     }
-    
     return count;
   }
   

@@ -5,10 +5,10 @@ package CoinToss;
 public class Coin{
     private final int HEADS = 0;
     private final int TAILS = 1;
+    private int face;
     //private final boolean TAILS = 1; // WHY NOT ???
     //private final boolean HEADS = 0; // WHY NOT BOOLEAN ?
     //private boolean face;
-    private int face;
 
 
   public Coin(){ // eta constructor
@@ -17,9 +17,10 @@ public class Coin{
   public void flip(){
 	face = (int)(Math.random()*2);
 	}
-  public boolean isHead(){
-	return (face == HEADS);
-	}
+  public boolean isHead(){ // BOOLEAN TYPE
+	return (face == HEADS); // true or false
+      //return (face);
+  }
 
     public String toString(){
         if(face == HEADS){return "it's HEADS !!!";}
