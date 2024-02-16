@@ -1,3 +1,4 @@
+package RationalNumberVognangsho;
 public class RationalNumber {
     private int numerator, denominator;
     

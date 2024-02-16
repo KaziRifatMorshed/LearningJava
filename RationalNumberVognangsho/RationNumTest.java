@@ -1,6 +1,4 @@
-/**
- * Auto Generated Java Class.
- */
+package RationalNumberVognangsho;
 public class RationNumTest {
   
   
