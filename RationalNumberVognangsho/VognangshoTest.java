@@ -18,6 +18,6 @@ public class VognangshoTest {
 
         four = three.inverse(); // careful SYNTAX
         five = one.add(two);
-        six
+        //six
     }
 }
