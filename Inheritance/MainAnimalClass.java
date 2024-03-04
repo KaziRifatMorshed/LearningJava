@@ -1,17 +1,23 @@
 package Inheritance;
+
 public class MainAnimalClass {
 
     public static void main(String[] args) {
-        Animal animal = new Animal();
-        Bird bird = new Bird();
-        Dog dog = new Dog("Tom");
-         
+        Animal a = new Animal();
+        Bird b = new Bird();
+        Dog d = new Dog("Tommy");
+
+        a = b; // Super Class can hold subclass reference
+        // d = b; //  Does not work
+
         System.out.println();
-        animal.sleep();
-        animal.eat();
-        bird.sleep();
-        bird.eat();
-        dog.sleep();
-        dog.eat();
+        a.sleep();
+        a.eat();
+        System.out.println();
+        b.sleep();
+        b.eat();
+        System.out.println();
+        d.sleep();
+        d.eat();
     }
 }
