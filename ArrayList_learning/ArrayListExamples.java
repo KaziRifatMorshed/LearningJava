@@ -1,4 +1,4 @@
-package ArrayList;
+package ArrayList_learning;
 
 import java.util.*;
 
@@ -35,7 +35,7 @@ public class ArrayListExamples {
         for (int i = 0; i < list.size(); i++) {
             System.out.println(STR."Index: \{i} - Item: \{list.get(i)}");
         }
-        // 2nd way:using foreach loop
+        // 2nd way:using for-each loop
         System.out.println("Retrieving items using foreach loop");
         for (String str : list) {
             System.out.println(STR."Item is: \{str}");
@@ -48,6 +48,7 @@ public class ArrayListExamples {
         while (it.hasNext()) {
             System.out.println(STR."Item is: \{it.next()}");
         }
+
         // Replacing an element
         list.set(1, "NewItem");
         System.out.println(STR."The arraylist after the replacement is: \{list}");
