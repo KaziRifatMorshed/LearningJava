@@ -65,12 +65,14 @@ public class ArrayListEmp {
         System.out.println(STR."The arraylist after the replacement is: \{list}");
         pos = list.indexOf(new Emp("NewItem1"));
         list.set(pos, new Emp(2, "Sayem"));
+
         // Removing items
         // removing the item in index 0
         list.remove(0);
         // removing the first occurrence of item "Item3"
         list.remove(new Emp(3, "Alokanonda"));
         System.out.println(STR."The final contents of the arraylist are: \{list}");
+
         // Converting ArrayList to Array
         Emp[] simpleArray = list.toArray(new Emp[list.size()]);
         System.out.println(STR."The array created after the conversion of our arraylist is: \{Arrays.toString(simpleArray)}");
