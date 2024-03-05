@@ -1,4 +1,4 @@
-package Lab1;
+package Die_Dice;
 
 public class Die {
 

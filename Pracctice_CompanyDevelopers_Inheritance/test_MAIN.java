@@ -1,5 +1,7 @@
 package Pracctice_CompanyDevelopers_Inheritance;
 
+import java.util.*;
+
 public class test_MAIN {
 
     public static void main(String[] args) {
@@ -38,8 +40,9 @@ public class test_MAIN {
         System.out.println("After kicking Sadiq & Seam and adding Rahul & Mashrafi in the company");
         durjay.removeProgrammer(seam);
         durjay.addProgrammer(new Programmer("Mashrafi", 76000.0, "Python"));
-        durjay.removeDevepeloper(sadiq);
+        durjay.removeDeveloper(sadiq);
         durjay.addDeveloper(new Developer("Rahul", 72000.0, "Android"));
+
         programmers = durjay.getProgrammerList();
         developers = durjay.getDeveloperList();
 
@@ -58,4 +61,4 @@ public class test_MAIN {
 
 // Manager, Programmer, Developer should be a subclass of Employee class
 
-}
+} // done

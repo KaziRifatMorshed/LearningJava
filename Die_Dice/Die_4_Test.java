@@ -1,4 +1,4 @@
-package Lab1;
+package Die_Dice;
 public class Die_4_Test {
     public static void main(String[] args){
         Die d1 = new Die(6,4);

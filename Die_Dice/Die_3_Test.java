@@ -1,4 +1,4 @@
-package Lab1;
+package Die_Dice;
 import java.util.*;
 public class Die_3_Test {
   static Random rand = new Random();
