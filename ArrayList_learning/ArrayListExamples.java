@@ -45,11 +45,14 @@ public class ArrayListExamples {
         for (int i = 0; i < list.size(); i++) {
             System.out.println(STR."Index: \{i} -> Item: \{list.get(i)}");
         }
+
         // 2nd way:using for-each loop
         System.out.println("Retrieving items using foreach loop");
         for (String str : list) { // for each string (FOR ANY STRING str) in the 'list'
             System.out.println(STR."Item is: \{str}");
         }
+
+        /*
         // 3rd way:using iterator
         // hasNext(): returns true if there are more elements
         // next(): returns the next element
@@ -58,11 +61,12 @@ public class ArrayListExamples {
         while (it.hasNext()) {
             System.out.println(STR."Item is: \{it.next()}");
         }
-//        Iterator<String> mama = list.iterator();
-//        while (mama.hasNext()){
-//            System.out.println(STR."Item is \{mama.next()}");
-//        }
-
+        /*
+        Iterator<String> mama = list.iterator();
+        while (mama.hasNext()){
+            System.out.println(STR."Item is \{mama.next()}");
+        }
+        */
         System.out.println();
 
         // Replacing an element
