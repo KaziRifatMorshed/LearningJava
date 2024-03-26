@@ -21,8 +21,19 @@ public class Database {
     public String toString() {
         String result = "";
         for (Item n : p) { // বার বার ভুলে যাই কেন তোমায়
-            result += p.toString();
+            Item temp = (Item) n; // this line makes the difference
+            result += temp.toString();
         }
         return result;
     }
+    //=====================
+//    public String toString() {
+//        String result = "";
+//        for (Iterator iter = p.iterator(); iter.hasNext(); ) {
+//            Item item = (Item) iter.next();
+//            result += item.toString();
+//        }
+//        return result;
+//    }
+
 }

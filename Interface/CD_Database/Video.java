@@ -14,6 +14,6 @@ public class Video extends Item {
 
     @Override
     public String toString() {
-        return STR. "Video: \{ super.toString() },\tDirector: \{ theDirector }\n" ;
+        return STR. "Video: \{ super.toString() }\tDirector: \{ theDirector }\n" ;
     }
 }
