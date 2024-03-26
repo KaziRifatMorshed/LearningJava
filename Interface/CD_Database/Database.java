@@ -2,21 +2,27 @@ package Interface.CD_Database;
 
 import java.util.*;
 
-public class Database implements basic {
-    protected String name, artist;
-    protected int num_tracks, total_length_minutes;
-    ArrayList<Database> p;
+public class Database {
+    protected ArrayList<Item> p;
 
     public Database() {
         p = new ArrayList<>();
     }
 
     public void addItem(Object o) {
-        Database _o = (Database) o;
+        Item _o = (Item) o;
         p.add(_o);
     }
 
     public void Sort() {
+        Collections.sort(p); // NEW
+    }
 
+    public String toString() {
+        String result = "";
+        for (Item n : p) { // বার বার ভুলে যাই কেন তোমায়
+            result += p.toString();
+        }
+        return result;
     }
 }
