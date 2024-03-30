@@ -3,7 +3,7 @@ package Lab_Test_3_2024;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String args[]) {
                
         ArrayList<Shape> sList = new ArrayList<Shape>();
         
