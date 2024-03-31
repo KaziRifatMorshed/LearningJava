@@ -26,11 +26,13 @@ public class CourseCode {
                 System.out.println(STR."Improper code length, you have inputted: \{user_input}");
             } catch (NumberFormatException exception) {
                 System.out.println(STR."Last digit is not numeric, you have inputted: \{user_input}");
+            } finally {
+                System.out.println("Finally..."); // EXECUTES every time
             }
             System.out.println("Enter_course_Code (\"XXX\" to exit): ");
             user_input = _scan.nextLine();
         }
-        System.out.println (STR."Number of valid theory courses entered: \{theory}");
-        System.out.println (STR."Number of valid sessional courses entered: \{sessional}");
+        System.out.println(STR."Number of valid theory courses entered: \{theory}");
+        System.out.println(STR."Number of valid sessional courses entered: \{sessional}");
     }
 }
