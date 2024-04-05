@@ -3,7 +3,7 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 
-public class MyFrame extends JFrame {
+public class   MyFrame extends JFrame {
     public MyFrame(){
         // JFrame this = new JFrame();
         this.setSize(480,480);
