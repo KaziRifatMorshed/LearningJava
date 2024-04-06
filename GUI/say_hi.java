@@ -6,6 +6,9 @@ public class say_hi extends JFrame {
     private JButton okDoneButton;
     private JButton cancelButton;
     private JPanel MainPanel;
+    private JTextField textField1;
+    private JFormattedTextField formattedTextField1;
+    private JPasswordField hahaPasswordField;
 
     say_hi() {
         this.setTitle("Halua");
