@@ -16,14 +16,27 @@ public class MyFrame_Button extends JFrame implements ActionListener {
         this.setLayout(null);
 
         jb1 = new JButton();
-        jb1.setBounds(200, 100, 100, 50);
+        jb1.setHorizontalAlignment(JLabel.CENTER);
+        jb1.setBounds(200, 100, 200, 75);
         this.add(jb1);
-        jb1.addActionListener(this); // ???
+        jb1.addActionListener(this); // IMPORTANT // this class is implementing the interface
+        jb1.setText("I'am a Button");
+        jb1.setFocusable(false);
+
     }
+
+//    @Override
+//    public void actionPerformed(ActionEvent actionEvent) {
+//        System.out.println(STR."\{count}.Pakhi Paka Pepe Khay");
+//        count++;
+//    }
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        System.out.println(STR."\{count}.Pakhi Paka Pepe Khay");
-        count++;
+        if (actionEvent.getSource() == jb1) {
+            System.out.println(STR."\{count}.Pakhi Paka Pepe Khay");
+            count++;
+
+        }
     }
 }
