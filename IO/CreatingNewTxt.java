@@ -8,7 +8,7 @@ public class CreatingNewTxt {
         PrintWriter output_stream = null;
         Scanner scanner = new Scanner(System.in);
         try {
-            output_stream = new PrintWriter("IO/learningIOjava1.txt"); // CREATING NEW FILE
+            output_stream = new PrintWriter("IO/Hamum.nice"); // CREATING NEW FILE
         } catch (FileNotFoundException e) {
             System.out.println(STR."Error opening the file,,,,\{e.getMessage()}");
             System.exit(0);
