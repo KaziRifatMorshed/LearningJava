@@ -22,7 +22,7 @@ public class jTextField extends JFrame implements ActionListener {
 
         button1 = new JButton("Submit !!!");
         button1.addActionListener(this); // !!!
-//        _text_.addActionListener(this); // WRONG APPROACH
+        _text_.addActionListener(this); // WRONG APPROACH
 
         _text_ = new JTextField();
         _text_.setPreferredSize(new Dimension(250, 30)); // !!!
@@ -47,13 +47,13 @@ public class jTextField extends JFrame implements ActionListener {
         String received = _text_.getText();
 
         // IS NOT WORKING // Further, it is shrinking the window size
-//        if (received.isEmpty()) {
-//            _text_.setText("Enter your username here...");
-//            _text_.setForeground(Color.LIGHT_GRAY);
-//        } else {
-//            _text_.setText("");
-//            _text_.setForeground(Color.BLACK);
-//        }
+        if (received.isEmpty()) {
+            _text_.setText("Enter your username here...");
+            _text_.setForeground(Color.LIGHT_GRAY);
+        } else {
+            _text_.setText("");
+            _text_.setForeground(Color.BLACK);
+        }
 
         if (actionEvent.getSource() == button1) {
             System.out.println(STR."Welcome pocca \{received} and checkbox selection: \{checkBox1.isSelected()}");
@@ -65,4 +65,4 @@ public class jTextField extends JFrame implements ActionListener {
     public static void main(String[] args) {
         new jTextField();
     }
-}
+} // still not complete
