@@ -1,4 +1,0 @@
-Anis  50  3.7
-Sakib  20  3.8
-Mushfiq  20  4.0
-Liton  19  3.9
