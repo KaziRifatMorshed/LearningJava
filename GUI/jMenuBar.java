@@ -26,8 +26,9 @@ public class jMenuBar extends JFrame implements ActionListener {
 
         menuBar1 = new JMenuBar();
 //        frame1.setMenuBar(menuBar1);
-        frame1.setJMenuBar(menuBar1);
+        frame1.setJMenuBar(menuBar1); // do not forget 
 //        menuBar1.setVisible(true);
+
         file_select_button = new JButton("Select File");
         file_select_button.addActionListener(this);
         frame1.add(file_select_button);
