@@ -7,7 +7,6 @@ public class dummy extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JButton button1;
 
     public dummy() {
         setContentPane(contentPane);
