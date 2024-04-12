@@ -1,6 +1,8 @@
 package IO.Student_database;
 
-public class _Person {
+import java.io.Serializable;
+
+public class _Person implements Serializable {
     protected String name;
     protected _Address address;
 
