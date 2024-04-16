@@ -32,6 +32,10 @@ public class jRadioButton implements ActionListener {
         frame1.add(r);
         frame1.add(p);
 
+//         personRadioButton.setSelected(true); // Yah
+
+
+
     }
 
     @Override
