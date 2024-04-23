@@ -16,7 +16,7 @@ public class Main_Test {
         // -----------------------------------------------------
         try {
 //            FileOutputStream file1 = new FileOutputStream("./IO/Student_database/we_are_students.ser");
-            FileOutputStream file1 = new FileOutputStream("/home/noobcodermsi/Documents/GitHub/LearningJava/IO/Student_database/we_are_students.ser");
+            FileOutputStream file1 = new FileOutputStream("./IO/Student_database/we_are_students.ser");
             ObjectOutputStream oos = new ObjectOutputStream(file1);
 
             oos.writeObject(p);

@@ -35,3 +35,29 @@ public class Main_ReadData {
         }
     }
 } // Hurrah Done
+
+
+/*
+I asked GPT for help and it returned
+
+try {
+    while (true) {
+        _Person inputted_person = (_Person) ois.readObject();
+        System.out.println(inputted_person);
+        System.out.println("----------------------------------------------");
+    }
+} catch (EOFException eof) {
+    // Reached end of file, no need to break explicitly
+} catch (ClassNotFoundException | IOException e) {
+    e.printStackTrace(); // Handle or log the exception appropriately
+} finally {
+    try {
+        if (ois != null) {
+            ois.close();
+        }
+    } catch (IOException e) {
+        e.printStackTrace(); // Handle or log the exception when closing
+    }
+}
+
+ */

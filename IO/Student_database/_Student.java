@@ -8,8 +8,16 @@ public class _Student extends _Person {
         stu_id = id;
     }
 
+//    public int getStu_id() {
+//        return stu_id;
+//    }
+
     public int getStu_id() {
         return stu_id;
+    }
+
+    public void setStu_id(int stu_id) {
+        this.stu_id = stu_id;
     }
 
     @Override

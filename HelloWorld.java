@@ -9,7 +9,6 @@ class HelloWorld {
         //m3 = STR."\{m1} \{m2}";
         // System.out.println (m3.replace('h','z'));
         System.out.println(m2);
-
         for (int i = 0; i < 20; i++) {
             System.out.println(STR."I am i = \{i++ + i++} mama."); // Xoss
             /*
@@ -21,7 +20,6 @@ class HelloWorld {
             I am i = 31 mama.
             I am i = 37 mama.
              */
-
         }
     }
 }
