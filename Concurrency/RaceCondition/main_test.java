@@ -2,7 +2,7 @@ package Concurrency.RaceCondition;
 
 public class main_test {
     public static void main(String[] args) throws InterruptedException {
-        My_Counter counter2 = new My_Counter();
+        My_Counter counter2 = new My_Counter(); // same object pass korbo duita thread er vitore
 
         Thread thread1 = new Thread(new Count_int_inc_Runnable(counter2));
         thread1.setName("add thread_1");
