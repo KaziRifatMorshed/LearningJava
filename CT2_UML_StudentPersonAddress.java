@@ -48,11 +48,13 @@ public class CT2_UML_StudentPersonAddress {
 
     public static void main(String[] args) {
         Address address = new Address("Hall Road", "Batiaghata", "Khulna");
-        Person person = new Person("Anis", address);
-        Student student = new Student(200201, "Siam", address);
+//        Person person = new Person("Anis", address);
+//        Student student = new Student(200201, "Siam", address);
+
+        Person person = new Student(200201, "Siam", address);
 
         System.out.println(person);
         System.out.println("--------");
-        System.out.println(student);
+//        System.out.println(student);
     }
 }
