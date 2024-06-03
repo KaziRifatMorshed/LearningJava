@@ -14,7 +14,7 @@ class Address {
         return "Address: " + street + ", " + city + ", " + state;
     }
 }
-
+// ======================================================
 class Person {
     String name;
     Address address;
@@ -29,7 +29,7 @@ class Person {
         return "Person: " + name + ", " + address;
     }
 }
-
+// ======================================================
 class Student extends Person {
     int id;
 
@@ -43,7 +43,7 @@ class Student extends Person {
         return "Student: ID " + id + ", Name: " + name + ", Address: " + address;
     }
 }
-
+// ======================================================
 public class CT2_UML_StudentPersonAddress {
 
     public static void main(String[] args) {
