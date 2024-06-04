@@ -17,6 +17,7 @@ public class main_test {
 
         thread1.join();
         thread2.join();
+        // জয়েন() না দিলে ভ্যালু একেবারে কম (২০০-৩০০ এর ঘরে) আসছে
 
         System.out.println(a.value());
     }
