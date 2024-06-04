@@ -29,6 +29,7 @@ public class CourseCode {
             } finally {
                 System.out.println("Finally..."); // EXECUTES every time
             }
+
             System.out.println("Enter_course_Code (\"XXX\" to exit): ");
             user_input = _scan.nextLine();
         }

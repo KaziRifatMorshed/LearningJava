@@ -3,8 +3,8 @@ package Concurrency;
 public class ThreadExample {
     public static void main(String[] args) {
         System.out.println(Thread.currentThread().getName());
-        for (int i = 0; i < 10; i++) {
-            new Thread(STR."\{i}") {
+        for (int i = 0; i < 20; i++) {
+            new Thread(STR."t\{i}d") {
                 public void run() {
                     System.out.println(STR."Thread: \{getName()} running");
                 }
@@ -13,6 +13,7 @@ public class ThreadExample {
     }
 }
 /*
+main
 Thread: 5 running
 Thread: 4 running
 Thread: 7 running

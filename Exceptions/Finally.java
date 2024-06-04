@@ -7,8 +7,14 @@ public class Finally {
         try {
             System.out.println(numerator / denominator);
             System.out.println("This text will not be printed.");
-        } catch (java.lang.ArithmeticException e) {
+        }
+//        catch (java.lang.Exception e) { // java: exception java.lang.ArithmeticException has already been caught
+//            System.out.println("(java.lang.Exception) This text will be printed.");
+//        } // কম্পাইল হবে না
+        catch (java.lang.ArithmeticException e) {
             System.out.println("(java.lang.ArithmeticException) This text will be printed.");
+        } catch (java.lang.Exception e) {
+            System.out.println("(java.lang.Exception) This text will be printed.");
         } finally {
             System.out.println("FINALLY, This text will also be printed.");
         }
