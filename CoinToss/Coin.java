@@ -2,7 +2,7 @@ package CoinToss;
 
 // import static java.lang.Math.random;
 
-public class Coin{
+public class Coin {
     private final int HEADS = 0;
     private final int TAILS = 1;
     private int face;
@@ -11,24 +11,33 @@ public class Coin{
     //private boolean face;
 
 
-  public Coin(){ // eta constructor
-	flip();
-	}
-  public void flip(){
-	face = (int)(Math.random()*2);
-	}
-  public boolean isHead(){ // BOOLEAN TYPE
-	return (face == HEADS); // true or false
-      //return (face);
-  }
-
-    public String toString(){
-        if(face == HEADS){return "it's HEADS !!!";}
-        else {return "it's TAILS !!!";}
+    public Coin() { // eta constructor
+        flip();
     }
-    public String PrintString(){
-        if(face == HEADS){return "it's HEADS!";}
-        else {return "it's TAILS!";}
+
+    public void flip() {
+        face = (int) (Math.random() * 2);
+    }
+
+    public boolean isHead() { // BOOLEAN TYPE
+        return (face == HEADS); // true or false
+        //return (face);
+    }
+
+    public String toString() {
+        if (face == HEADS) {
+            return "it's HEADS !!!";
+        } else {
+            return "it's TAILS !!!";
+        }
+    }
+
+    public String PrintString() { // experimental
+        if (face == HEADS) {
+            return "it's HEADS!";
+        } else {
+            return "it's TAILS!";
+        }
     }
     // EOF
 }

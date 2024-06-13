@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 // kazi
 public class Value1_Value2_sum_result extends JFrame implements ActionListener {
     private JFrame frame1 = new JFrame();
@@ -15,9 +16,9 @@ public class Value1_Value2_sum_result extends JFrame implements ActionListener {
     private JTextField textField2 = new JTextField(10);
     private JTextField textField3 = new JTextField(10);
     private JButton button1 = new JButton("Add/Sum");
-private JLabel label1 = new JLabel("Value of 1: ");
-private JLabel label2 = new JLabel("Value of 2: ");
-private JLabel label3 = new JLabel("SUM : ");
+    private JLabel label1 = new JLabel("Value of 1: ");
+    private JLabel label2 = new JLabel("Value of 2: ");
+    private JLabel label3 = new JLabel("SUM : ");
 
     public Value1_Value2_sum_result() {
 //        frame1.add(panel1);
@@ -26,7 +27,7 @@ private JLabel label3 = new JLabel("SUM : ");
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame1.setLayout(new FlowLayout()); // eta change korle ki ki hoy
 //frame1.setLayout(new BorderLayout()); // text field ase na
-frame1.setLayout(new GridLayout(0,1)); // this is best
+        frame1.setLayout(new GridLayout(0, 1)); // this is best
 
         panel1.add(label1);
         panel1.add(textField1);
@@ -34,16 +35,15 @@ frame1.setLayout(new GridLayout(0,1)); // this is best
         panel2.add(label2);
         panel2.add(textField2);
 
+        panel4.add(button1);
+
         panel3.add(label3);
         panel3.add(textField3);
 
-        panel4.add(button1);
-
-
         frame1.getContentPane().add(panel1);
         frame1.getContentPane().add(panel2);
-        frame1.getContentPane().add(panel3);
         frame1.getContentPane().add(panel4);
+        frame1.getContentPane().add(panel3);
 
 
     }
@@ -57,7 +57,7 @@ frame1.setLayout(new GridLayout(0,1)); // this is best
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource() == button1) {
             int result = Integer.parseInt(textField1.getText()) + Integer.parseInt(textField2.getText());
-            textField3.setText(String.valueOf(result)); // nice
+            textField3.setText(String.valueOf(result) + ""); // nice
         }
     }
 }
