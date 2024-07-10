@@ -83,7 +83,7 @@ class Node {
         }
         // Mechanism
         if (A.value < B.value) { // A ছোট
-            // যে ছোট তাকে ধরে তার নেক্সট কে খুজব 
+            // যে ছোট তাকে ধরে তার নেক্সট কে খুজব
             A.next = SortedMergeLinkedList(A.next, B);
             return A;
         } else {
