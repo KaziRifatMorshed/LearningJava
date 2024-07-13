@@ -4,23 +4,23 @@ class dNode {
     int data;
     dNode next, prev;
 
-    public dNode(int n) {
+    dNode(int n) {
         this.data = n;
     }
 
-    public dNode(int data, dNode prev, dNode next) {
+    dNode(int data, dNode prev, dNode next) {
         this.data = data;
         this.prev = prev;
         this.next = next;
     }
 
-    public int getData() {
+    int getData() {
         return data;
     }
 }
 
 class DoublyLinkedList {
-    
+
     static dNode Create_a_DoubleLinkedList(int n) {
         dNode head = null;
         dNode p = null;

@@ -6,7 +6,7 @@ class Node {
     private int value;
     private Node next = null;
 
-    public Node(int v) {
+    Node(int v) {
         this.value = v;
     }
 
@@ -17,23 +17,23 @@ class Node {
 
 //    public Node(int v, Node n) { // THIS IS A BAD IDEA COZ WE DON.T KNOW WHO WILL BE NEXT in future
 
-    public int getValue() {
+    int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    void setValue(int value) {
         this.value = value;
     }
 
-    public Node getNext() {
+    Node getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    void setNext(Node next) {
         this.next = next;
     }
 
-    public static void PrintWholeLinkedList(Node p) {
+    static void PrintWholeLinkedList(Node p) {
 //        while (p.next != null) { // p.next হবে না । কারণ লুপের লাস্টে ইঙ্ক্রিমেন্ট করে নেক্সট কে ভ্যারিএবলে নিয়ে নেওয়ার আমাকে লুপ-স্টার্টিং কন্ডিশন চেকিং এ p.next চেক করা লাগবে না, p নাল কি না চেক করলেই হবে ।
         System.out.print("Printing Whole Linked List: ");
         while (p != null) {
@@ -43,7 +43,7 @@ class Node {
         System.out.println();
     } // DONE
 
-    public static void PrintWholeLinkedListREVERSELY(Node p) {
+    static void PrintWholeLinkedListREVERSELY(Node p) {
         if (p == null) {
             return;
         }
@@ -61,7 +61,7 @@ class Node {
 //        // নতুন হেড হারিয়ে ফেলেছি
 //    }
 
-    public static Node REVERSE_a_Linked_List(Node p) { // কম কম বুঝেছি
+    static Node REVERSE_a_Linked_List(Node p) { // কম কম বুঝেছি
         if (p == null || p.next == null) {
 //            return null; // না, নাল রিটার্ন করলে লাস্ট নোড কে হারিয়ে ফেললাম
             return p;
@@ -72,7 +72,8 @@ class Node {
         return q;
     }
 
-    public static Node SortedMergeLinkedList(Node A, Node B) { // difficult
+    static Node SortedMergeLinkedList(Node A, Node B) {
+        // difficult
         // BASE CASE
         // রিকার্সিভ কল করে যাকে পাস করেছি তাকে চেক করব বেইস কেস এ
         if (A == null) {
@@ -90,12 +91,32 @@ class Node {
             B.next = SortedMergeLinkedList(A, B.next);
             return B;
         }
-    }
+    } // WORKING
 
+    static void Sort_Singly_Linked_List(Node head) {
+        Node p = head;
+        while (p != null) {
+            Node f = p.next;
+            while (f != null) {
+                if (p.value > f.value) {
+//                    { // changing value only
+//                        int temp = p.value;
+//                        p.value = f.value;
+//                        f.value = temp;
+//                    } // WORKING
+                    { // changing nodes
+
+                    }
+                }
+                f = f.next;
+            }
+            p = p.next;
+        }
+    }
 }
 
 class LinkedList {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         // Linked List Creation
         Node head1 = null;
         Node head2 = null;
@@ -110,33 +131,46 @@ class LinkedList {
                 p = new_node;
             }
         }
-        for (int i = 2; i <= 10; i++, i++) {
+        for (int i = 1; i <= 10; i++, i++) {
 //            System.out.print(STR."Loop's i = \{i}, ");
-            if (i == 2) {
-                p = head2 = new Node(i);
+            int randInt = (int) (Math.random() * 100);
+            if (i == 1) {
+                p = head2 = new Node(randInt);
             } else {
-                Node new_node = new Node(i);
+                Node new_node = new Node(randInt);
                 p.setNext(new_node);
                 p = new_node;
             }
         }
 //----------------------------------------------------------
 // ============ Print Whole List ============
-//        PrintWholeLinkedList(head); // DONE
+//        PrintWholeLinkedList(head2); // DONE
 //----------------------------------------------------------
 // ============ Print whole list Reversely ============
-//        PrintWholeLinkedListREVERSELY(head);
+//        PrintWholeLinkedListREVERSELY(head); // DONE
 //----------------------------------------------------------
 // ============ Reversed Link List Printing ============
 //        Node k = REVERSE_a_Linked_List(head);
 //        PrintWholeLinkedList(k);
 //        PrintWholeLinkedList(head);
+        // DONE
 //----------------------------------------------------------
 // ============= Shorted Merged Linked List ==============
 //        SortedMergeLinkedList(head1, head2);
 //        PrintWholeLinkedList(head1);
 //        PrintWholeLinkedList(head2);
+        // DONE
 ///---------------------------------------------------------
+// ============= Insert a node ==============
+///---------------------------------------------------------
+// ============= delete a node ==============
+///---------------------------------------------------------
+// ============= Sort a singly linked list ==============
+        Sort_Singly_Linked_List(head2);
+        PrintWholeLinkedList(head2);
+
+///---------------------------------------------------------
+
 
     }
 }
