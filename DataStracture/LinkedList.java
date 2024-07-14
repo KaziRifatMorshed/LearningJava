@@ -2,6 +2,8 @@ package DataStracture;
 
 import static DataStracture.Node.*;
 
+// NOTE: Sort_Singly_Linked_List() is incomplete
+
 class Node {
     private int value;
     private Node next = null;
@@ -93,25 +95,55 @@ class Node {
         }
     } // WORKING
 
-    static void Sort_Singly_Linked_List(Node head) {
-        Node p = head;
-        while (p != null) {
-            Node f = p.next;
-            while (f != null) {
-                if (p.value > f.value) {
-//                    { // changing value only
+    static Node Sort_Singly_Linked_List(Node head) {
+
+/*
+//                    { // changing value only // EASY
 //                        int temp = p.value;
 //                        p.value = f.value;
 //                        f.value = temp;
+//                        return head;
 //                    } // WORKING
-                    { // changing nodes
+* */
 
+        Node p = head;
+        if (p.value > (p.next).value) {
+            (p.next) = (p.next).next;
+            (p.next).next = p;
+        }
+
+        for (; p != null; p = p.next) {
+            for (Node f = p.next; f != null; f = f.next) {
+                if (p.value > f.value) {
+
+                    { // changing nodes
+                        if (f.next == null) { // for last two pair
+
+                        }
                     }
                 }
-                f = f.next;
             }
-            p = p.next;
         }
+        return head;
+    }  // PENDING
+
+    static Node Delete_a_node_from_Singly_linked_list(Node head, int key) {
+        if (head.value == key) { // edge case : first node
+            Node temp = head;
+            head = head.next;
+            temp.next = null; // will get deleted automatically by Garbage Collector
+        }
+        for (Node p = head; p != null; p = p.next) { // loop for searching
+            if ((p.next).next == null && (p.next).value == key) {
+                p.next = null;
+                return head;
+            }
+            if (p.next.value == key) {
+                p.next = p.next.next;
+                return head;
+            }
+        }
+        return head;
     }
 }
 
@@ -121,7 +153,7 @@ class LinkedList {
         Node head1 = null;
         Node head2 = null;
         Node p = null;
-        for (int i = 1; i <= 10; i++, i++) {
+        for (int i = 1; i <= 10; i++) {
 //            System.out.print(STR."Loop's i = \{i}, ");
             if (i == 1) {
                 p = head1 = new Node(i);
@@ -164,11 +196,13 @@ class LinkedList {
 // ============= Insert a node ==============
 ///---------------------------------------------------------
 // ============= delete a node ==============
+        head1 = Delete_a_node_from_Singly_linked_list(head1, 1);
+        PrintWholeLinkedList(head1);
 ///---------------------------------------------------------
 // ============= Sort a singly linked list ==============
-        Sort_Singly_Linked_List(head2);
-        PrintWholeLinkedList(head2);
-
+//        PENDING
+//        head2 = Sort_Singly_Linked_List(head2);
+//        PrintWholeLinkedList(head2);
 ///---------------------------------------------------------
 
 
