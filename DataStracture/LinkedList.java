@@ -132,8 +132,9 @@ class Node {
             Node temp = head;
             head = head.next;
             temp.next = null; // will get deleted automatically by Garbage Collector
+            return head;
         }
-        for (Node p = head; p != null; p = p.next) { // loop for searching
+        for (Node p = head; p.next != null; p = p.next) { // loop for searching
             if ((p.next).next == null && (p.next).value == key) {
                 p.next = null;
                 return head;
@@ -145,7 +146,7 @@ class Node {
         }
         return head;
     }
-}
+} // WORKING WELL
 
 class LinkedList {
     static void main(String[] args) {
@@ -196,8 +197,8 @@ class LinkedList {
 // ============= Insert a node ==============
 ///---------------------------------------------------------
 // ============= delete a node ==============
-        head1 = Delete_a_node_from_Singly_linked_list(head1, 1);
-        PrintWholeLinkedList(head1);
+//        head1 = Delete_a_node_from_Singly_linked_list(head1, 12);
+//        PrintWholeLinkedList(head1);
 ///---------------------------------------------------------
 // ============= Sort a singly linked list ==============
 //        PENDING

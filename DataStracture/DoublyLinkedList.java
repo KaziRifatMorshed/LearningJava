@@ -67,6 +67,24 @@ class DoublyLinkedList {
         return head;
     } // WORKING
 
+    static dNode Delete_Node(dNode head, int key) {
+
+        if (head.data == key) {
+            dNode temp = head;
+            head = head.next;
+            temp.next = null;
+            return head;
+        }
+        for (dNode p = head; p.next != null; p = p.next) {
+            if (p.next.next == null && p.next.data == key) {
+                p.next.prev = null;
+                p.next = null;
+            }
+            if (p.next.data )
+        }
+        return head;
+    }
+
     static void PrintAllNodesOnce(dNode head) {
         dNode p = head;
         System.out.print("Printing All Nodes once: ");
