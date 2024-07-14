@@ -38,6 +38,35 @@ class DoublyLinkedList {
         return head;
     } // WORKING
 
+    static dNode Insert_Node(dNode head, int new_node_data) {
+        // first case : হেড থেকে ছোট কি না
+        dNode new_node = null;
+        if (new_node_data < head.data) {
+            new_node = new dNode(new_node_data, null, head);
+            head.prev = new_node;
+            return new_node;
+        } else {
+            // second case : হেড বা শুরুর কর্ণারে নয়
+            for (dNode p = head.next; p != null; p = p.next) { // linear search
+                if (p.next == null) { // লাস্টে কি না
+                    new_node = new dNode(new_node_data, p, null);
+                    System.out.println(STR."new node data will be \{new_node_data} and it has become \{new_node.data}");
+                    p.next = new_node;
+                    return head;
+                }
+                if (p.data <= new_node_data && new_node_data < p.next.data) { // লিনিয়ার সার্চে খুজে পেলে
+                    // যদি শিওরলি মাঝেই হয়
+                    dNode next_node = p.next;
+                    new_node = new dNode(new_node_data, p, next_node);
+                    p.next = new_node;
+                    next_node.prev = new_node;
+                    return head;
+                }
+            }
+        }
+        return head;
+    } // WORKING
+
     static void PrintAllNodesOnce(dNode head) {
         dNode p = head;
         System.out.print("Printing All Nodes once: ");
@@ -46,27 +75,44 @@ class DoublyLinkedList {
             p = p.next;
         }
         System.out.println();
-    } // WORKING
+    } // DONE
 
     static void PrintAllNodesBoomerang(dNode head) {
         dNode p = head;
         System.out.print("Printing All Nodes once and then reversely: ");
-        while (p.next != null) {
+
+        for (; ; p = p.next) {
+            /*
+             * যদি for loop এর কন্ডিশনে p.next != null দিতাম তখন লাস্ট নোডে যেয়ে এই কন্ডিশন
+             * মিথ্যা হয়ে যাওয়ায় লুপের ভিতরে ঢুকে (মানে প্রিন্ট না করেই) লুপ থেকে বের হয়ে যেত
+             * আর p = p.prev; এর জন্য লাস্ট নোড এ বসে তার আগের নোড কে ক্যাপচার করত
+             * */
             System.out.print(STR."\{p.getData()} ");
-            p = p.next;
+            if (p.next == null) { // use if for break inside the loop
+                p = p.prev;
+                break;
+            }
         }
-        p = p.prev;
+
+
         while (p != null) {
             System.out.print(STR."\{p.getData()} ");
             p = p.prev;
         }
         System.out.println();
-    } // WORKING
+    } // now WORKING
 
+
+    // ================= MAIN METHOD =====================
 
     static void main(String[] args) {
-        dNode head = Create_a_DoubleLinkedList(20);
+        dNode head = Create_a_DoubleLinkedList(25);
 //        PrintAllNodesOnce(head);
+//        PrintAllNodesBoomerang(head);
+
+        int k = 9;
+        System.out.println(STR." k = \{k} into the linked list...");
         PrintAllNodesBoomerang(head);
+        PrintAllNodesOnce(head);
     }
 }
