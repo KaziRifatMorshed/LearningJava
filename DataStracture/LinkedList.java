@@ -146,6 +146,27 @@ class Node {
         }
         return head;
     }
+
+    static Node Search_Singly_Linked_List(Node p, int key) {
+
+        for (; p != null; p = p.next) {
+            if (p.value == key) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    static Node Search_Previous(Node n, int key) {
+        Node prev = n;
+        for (; n != null; prev = n, n = n.next) {
+            if (n.value == key) {
+                return prev;
+            }
+        }
+        return null;
+    }
+
 } // WORKING WELL
 
 class LinkedList {
