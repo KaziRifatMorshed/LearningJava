@@ -76,14 +76,20 @@ class DoublyLinkedList {
             return head;
         }
         for (dNode p = head; p.next != null; p = p.next) {
-            if (p.next.next == null && p.next.data == key) {
+            if ((p.next).next == null && p.next.data == key) {
                 p.next.prev = null;
                 p.next = null;
+                return head; // after coding, I forgot to return or, forgot to terminate the code
             }
-            if (p.next.data )
+            if ((p.next).data == key) {
+                dNode next_node = p.next.next;
+                next_node.prev = p;
+                p.next = next_node;
+                return head;
+            }
         }
         return head;
-    }
+    } // WORKING
 
     static void PrintAllNodesOnce(dNode head) {
         dNode p = head;
@@ -124,12 +130,13 @@ class DoublyLinkedList {
     // ================= MAIN METHOD =====================
 
     static void main(String[] args) {
-        dNode head = Create_a_DoubleLinkedList(25);
+        dNode head = Create_a_DoubleLinkedList(20);
 //        PrintAllNodesOnce(head);
 //        PrintAllNodesBoomerang(head);
 
-        int k = 9;
-        System.out.println(STR." k = \{k} into the linked list...");
+        int k = 0;
+        System.out.println(STR."Deleting k = \{k} into the linked list...");
+        head = Delete_Node(head, k);
         PrintAllNodesBoomerang(head);
         PrintAllNodesOnce(head);
     }
