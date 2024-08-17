@@ -1,3 +1,6 @@
-./out/*
+/out/*
 .idea/material_theme_project_new.xml
 /.idea
+.idea/LearningJava.iml
+/.idea
+/out
