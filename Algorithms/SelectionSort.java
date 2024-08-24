@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SelectionSort {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
 //        int[] data = new int[]{-5, 20, 3, 9, 4, -4, 7, 2, 0, 45, 5, 8, 14, 5, 8, 4, 52};
         int[] data = new int[]{-5, 20, 3, 9, 4, -4};
         System.out.println(STR."Before = \{Arrays.toString(data)}");
@@ -25,4 +25,4 @@ public class SelectionSort {
             data[i] = temp;
         }
     }
-} // DONE   
+} // DONE
