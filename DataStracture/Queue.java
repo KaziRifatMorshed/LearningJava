@@ -1,12 +1,12 @@
 package DataStracture;
 
-public class Queue { // inefficient
+class Queue_my { // inefficient
     private int size_of_array = -1;
     private int occupied_count = 0;
     //    private int start_idx = 0, end_idx = 0;
     private int[] queue_array;
 
-    public Queue(int size_of_array) {
+    public Queue_my(int size_of_array) {
         this.size_of_array = size_of_array;
         queue_array = new int[size_of_array];
     }
@@ -59,7 +59,7 @@ public class Queue { // inefficient
     }
 
     public static void main(String[] args) {
-        Queue myQueue = new Queue(5);
+        Queue_my myQueue = new Queue_my(5);
         myQueue.enQueue(1);
         myQueue.enQueue(2);
         myQueue.enQueue(3);
@@ -78,4 +78,4 @@ public class Queue { // inefficient
         myQueue.deQueue();
         myQueue.print_whole_queue();
     }
-}
+} // done
