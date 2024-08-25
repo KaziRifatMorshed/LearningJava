@@ -36,6 +36,5 @@ public class QuickSort {
         int temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;
-
     }
 } // DONE
