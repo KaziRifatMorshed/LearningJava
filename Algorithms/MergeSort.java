@@ -24,7 +24,7 @@ public class MergeSort {
 
     public static void merge(int[] data, int start, int mid, int end) {
         int[] temp = new int[end - start + 1];
-        int i = start, j = mid + 1, k = 0;
+        int i = start, j = mid + 1, k = 0; // j = mid + 1
 
         while (i <= mid && j <= end) {
             if (data[i] <= data[j]) {

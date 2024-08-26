@@ -1,4 +1,4 @@
-package Algorithms;
+package DataStracture;
 
 class my_StackOverflowException extends Exception {
     public my_StackOverflowException() {
