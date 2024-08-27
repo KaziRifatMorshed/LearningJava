@@ -75,15 +75,26 @@ class BinarySearchTree {
         return p;
     } // should work
 
-    static void insert_node(bstNode node, int d) {
+    static bstNode insert_node(bstNode node, int d) { // my own thinking
         if (node == null) {
-            return;
+            return null;
         }
         if (node.data == d) {
             System.out.println(STR."\{d}Already Exists !");
-            return;
+            return null;
         }
-    }
+        if (node.left == null && d < node.data) {
+            bstNode new_node = new bstNode(d);
+            node.left = new_node;
+            return new_node;
+        }
+        if (node.right == null && node.data < d) {
+            bstNode new_node = new bstNode(d);
+            node.right = new_node;
+            return new_node;
+        }
+        return null;
+    } // dunno will work or not
 
     void Print_All_LEAF_Nodes(bstNode p) {
         if (p == null) {
