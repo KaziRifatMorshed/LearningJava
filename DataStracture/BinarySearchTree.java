@@ -76,25 +76,55 @@ class BinarySearchTree {
     } // should work
 
     static bstNode insert_node(bstNode node, int d) { // my own thinking
+        // reminder: ei function er kaj shudhu insert kora, search kora na je 'null' and 'node' duita possible return value thakbe
         if (node == null) {
-            return null;
+            return new bstNode(d); // not return null;
         }
         if (node.data == d) {
             System.out.println(STR."\{d}Already Exists !");
-            return null;
+            return node;
         }
-        if (node.left == null && d < node.data) {
-            bstNode new_node = new bstNode(d);
-            node.left = new_node;
-            return new_node;
+        if (d < node.data) {
+            if (node.left == null) {
+                node.left = new bstNode(d); // NOT return new bstNode(d);
+            } else {
+                insert_node(node.left, d);
+//                node = insert_node(node.left, d);
+            }
+        } else {
+            if (node.right == null) {
+                node.right = new bstNode(d); // NOT return new bstNode(d);
+            } else {
+                insert_node(node.right, d);
+//                node = insert_node(node.right, d);
+            }
         }
-        if (node.right == null && node.data < d) {
-            bstNode new_node = new bstNode(d);
-            node.right = new_node;
-            return new_node;
+        return node;
+    }
+
+    static void insert_node_book_rafiq_sir(bstNode node, int value) { // BUJHI NAI
+        if (node == null) return;
+
+        bstNode parent = null;
+        while (node != null) {
+            if (value < node.data) {
+                parent = node;
+                node = node.left;
+            } else {
+                parent = node;
+                node = node.right;
+            }
         }
-        return null;
-    } // dunno will work or not
+
+        node = new bstNode(value);
+        node.parent = parent;
+
+        if (value > parent.getData()) {
+            parent.right = node;
+        } else {
+            parent.left = node;
+        }
+    }
 
     void Print_All_LEAF_Nodes(bstNode p) {
         if (p == null) {
