@@ -13,8 +13,7 @@ class my_StackUnderflowException extends Exception {
 }
 
 class Queue {
-    private int capacity = -1;
-    private int occupied_count = 0;
+    private int capacity = -1, occupied_count = 0;
     private int start_idx = -1, end_idx = -1;
     private int[] Queue_array;
 
@@ -23,8 +22,7 @@ class Queue {
             throw new my_StackOverflowException();
         } else {
 //            if (occupied_count == 0) { // DO NOT PUT THIS HERE
-//                start_idx = 0;
-//                end_idx = 0;
+//                start_idx = end_idx = 0;
 //            }
             if (end_idx == capacity - 1) {
                 end_idx = 0;
@@ -32,8 +30,7 @@ class Queue {
                 end_idx++;
             }
             if (occupied_count == 0) { // DO NOT FORGET THIS
-                start_idx = 0;
-                end_idx = 0;
+                start_idx = end_idx = 0;
             }
             Queue_array[end_idx] = new_data;
             occupied_count++;
@@ -71,6 +68,7 @@ class Queue {
 
     private boolean isEmpty() {
         return occupied_count == 0;
+//        return start_idx == end_idx;
     }
 
     private boolean isFull() {
@@ -97,20 +95,20 @@ class Queue {
     public static void main(String[] args) throws my_StackOverflowException, my_StackUnderflowException {
         Queue myQueue = new Queue(5);
 //        try {
-            myQueue.enQueue(1);
-            myQueue.enQueue(2);
-            myQueue.enQueue(3);
-            myQueue.enQueue(4);
-            myQueue.enQueue(5);
-            myQueue.enQueue(6);
-            myQueue.enQueue(7);
-            myQueue.print_whole_Queue();
-            myQueue.deQueue();
-            myQueue.deQueue();
-            myQueue.deQueue();
-            myQueue.print_whole_Queue();
-            myQueue.deQueue();
-            myQueue.deQueue();
+        myQueue.enQueue(1);
+        myQueue.enQueue(2);
+        myQueue.enQueue(3);
+        myQueue.enQueue(4);
+        myQueue.enQueue(5);
+        myQueue.enQueue(6);
+        myQueue.enQueue(7);
+        myQueue.print_whole_Queue();
+        myQueue.deQueue();
+        myQueue.deQueue();
+        myQueue.deQueue();
+        myQueue.print_whole_Queue();
+        myQueue.deQueue();
+        myQueue.deQueue();
 //        myQueue.deQueue();
 //        myQueue.deQueue();
 //            myQueue.print_whole_Queue();

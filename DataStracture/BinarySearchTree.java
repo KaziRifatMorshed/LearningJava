@@ -2,7 +2,14 @@ package DataStracture;
 
 class bstNode {
     public int data;
-    public bstNode left, right;
+    public bstNode left, right, parent;
+
+    public bstNode(int data, bstNode left, bstNode right, bstNode parent) {
+        this.data = data;
+        this.left = left;
+        this.right = right;
+        this.parent = parent;
+    }
 
     public bstNode(int data, bstNode left, bstNode right) {
         this.data = data;
@@ -37,6 +44,18 @@ class bstNode {
     public void setRight(bstNode right) {
         this.right = right;
     }
+
+    void PreOrder_Traversal() {
+        System.out.println(STR." \{this.data} ");
+        if (this.left != null) this.left.PreOrder_Traversal();
+        if (this.right != null) this.right.PreOrder_Traversal();
+    }
+
+    void PostOrder_Traversal() {
+        if (this.left != null) this.left.PostOrder_Traversal();
+        if (this.right != null) this.right.PostOrder_Traversal();
+        System.out.println(STR." \{this.data} ");
+    }
 }
 
 class BinarySearchTree {
@@ -56,6 +75,16 @@ class BinarySearchTree {
         return p;
     } // should work
 
+    static void insert_node(bstNode node, int d) {
+        if (node == null) {
+            return;
+        }
+        if (node.data == d) {
+            System.out.println(STR."\{d}Already Exists !");
+            return;
+        }
+    }
+
     void Print_All_LEAF_Nodes(bstNode p) {
         if (p == null) {
             return;
@@ -71,6 +100,35 @@ class BinarySearchTree {
         if (p.right != null)
             Print_All_LEAF_Nodes(p.right);
     } // should work
+
+    static void InOrder_Traversal(bstNode n) {
+        System.out.println("InOrder Traversal : [ ");
+        inOrder_traverse(n);
+        System.out.println("]");
+    }
+
+    static void inOrder_traverse(bstNode n) {
+        if (n.left != null) inOrder_traverse(n.left);
+        System.out.println(STR." \{n.data} ");
+        if (n.right != null) inOrder_traverse(n.right);
+    }
+
+
+    private static bstNode search_bst(bstNode n, int key) {
+        if (n != null) {
+            if (n.data == key) {
+                System.out.println(STR."Data \{key} has been FOUND !");
+                return n;
+            }
+            if (key < n.data) {
+                search_bst(n.left, key);
+            } else {
+                search_bst(n.right, key);
+            }
+        }
+        System.out.println("Node not found ...");
+        return null;
+    }
 
 
     // -----------------------------------------------------
