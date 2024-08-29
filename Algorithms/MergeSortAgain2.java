@@ -41,6 +41,7 @@ public class MergeSortAgain2 {
             temp[k++] = data[j++];
         }
 
+//        if (end + 1 - start >= 0) System.arraycopy(temp, start - start, data, start, end + 1 - start);
         for (int p = start; p <= end; p++) {
             data[p] = temp[p - start];
         }

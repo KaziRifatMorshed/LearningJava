@@ -1,6 +1,10 @@
 /out/*
 .idea/material_theme_project_new.xml
 /.idea
-.idea/LearningJava.iml
-/.idea
 /out
+/.idea/
+/out
+/out/production
+/out/production/LearningJava
+/out/production/LearningJava/.idea/inspectionProfiles
+/out/production/LearningJava/.idea
