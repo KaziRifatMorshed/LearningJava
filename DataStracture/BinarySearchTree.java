@@ -63,13 +63,16 @@ class BinarySearchTree {
     static void delete_node_rafiq_sir(bstNode root, int d) {
         bstNode node = search_bst(root, d), parent = node.parent;
 
+        // 1
         if (node == null) { // search result not found
             return;
         }
+        // 2
         if (parent == null) { // is root
             System.out.println("root can't be deleted");
             return;
         }
+        // 3
         if (node.left == null && node.right == null) { // if leaf node
             if (parent.left == node) {
                 parent.left = null;
@@ -78,11 +81,26 @@ class BinarySearchTree {
             }
             return;
         }
-        // now, if has one child
-        if (node.right == null){
+        // 4
+        // now, if it has one child
+        if (node.right == null) { // has one left child
+            if (d < parent.data) { // Parent er kon side e node ache  // jodi targeted node parent er bam dik e thake
+                parent.left = node.left;
+            } else {
+                parent.right = node.left;
+            }
+        } else {
+            if (d < parent.data) {
+                parent.left = node.right;
+            } else {
+                parent.right = node.right;
+            }
+        }
+        // 5
+        // target node has two child
+        if (node.left != null && node.right != null) {
 
         }
-
     }
 
     bstNode Insert_Node(bstNode p, int data) {
