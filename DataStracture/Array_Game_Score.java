@@ -36,7 +36,6 @@ class ScoreBoard {
     private GameEntry[] board;
 
     public ScoreBoard(int numEntries) {
-        this.numEntries = numEntries;
         board = new GameEntry[this.numEntries];
     }
 
