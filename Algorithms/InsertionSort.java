@@ -18,18 +18,29 @@ public class InsertionSort {
 
     }
 
-    private static void insertionSort(int[] data) {
+    private static void insertionSort(int[] data) { // Goodrich book
+        int n = data.length;
+        for (int k = 1; k < n; k++) {
+            int curr = data[k];
+            int i = k;
+            for (; i > 0 && data[i - 1] > curr; i--) {
+//                data[i - 1] = data[i];
+                data[i] = data[i - 1];
+            }
+            data[i] = curr;
+        }
+    } // Done
+
+    private static void insertionSort2(int[] data) {
         for (int i = 0; i <= data.length; i++) { // i <= data.length
             if (data.length == 1) {
                 break;
             }
             for (int j = i - 1; j > 0; j--) {
                 if (data[j] < data[j - 1]) {
-                    swap(data, j, j - 1);
+                    swap(data, j, j - 1); // ??????? swap korle je Bubbe Sort hoye jay !!!!!!!!!!
                 }
             }
         }
-
-
     }
 }// DONE

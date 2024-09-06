@@ -69,9 +69,9 @@ class Node {
             return p;
         }
         Node q = REVERSE_a_Linked_List(p.next); // ???
-        (p.next).next = (p.next); // পরবর্তী নোডের এর নেক্সট এ নিজেকে রাখবে
+        (p.next).next = p; // পরবর্তী নোডের এর নেক্সট এ নিজেকে রাখবে
         (p.next) = null; // পরবর্তী এর নেক্সটে নিজেকে রেখে নিজের ভবিষ্যতকে নাল করে দিবে
-        return q;
+        return q; // return of new head
     }
 
     static Node SortedMergeLinkedList(Node A, Node B) {
@@ -182,11 +182,11 @@ class LinkedList {
             } else {
                 Node new_node = new Node(i);
                 p.setNext(new_node);
-                p = new_node;
+                p = p.getNext();
             }
         }
-        for (int i = 1; i <= 10; i++, i++) {
-//            System.out.print(STR."Loop's i = \{i}, ");
+        for (int i = 1; i <= 10; i++) {
+//            System.out.println(STR."Loop's i = \{i}, ");
             int randInt = (int) (Math.random() * 100);
             if (i == 1) {
                 p = head2 = new Node(randInt);
@@ -198,15 +198,14 @@ class LinkedList {
         }
 //----------------------------------------------------------
 // ============ Print Whole List ============
-//        PrintWholeLinkedList(head2); // DONE
+        PrintWholeLinkedList(head2); // DONE
 //----------------------------------------------------------
 // ============ Print whole list Reversely ============
 //        PrintWholeLinkedListREVERSELY(head); // DONE
 //----------------------------------------------------------
 // ============ Reversed Link List Printing ============
-//        Node k = REVERSE_a_Linked_List(head);
-//        PrintWholeLinkedList(k);
-//        PrintWholeLinkedList(head);
+        head2 = REVERSE_a_Linked_List(head2);
+        PrintWholeLinkedList(head2);
         // DONE
 //----------------------------------------------------------
 // ============= Shorted Merged Linked List ==============
