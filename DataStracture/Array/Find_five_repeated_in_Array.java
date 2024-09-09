@@ -10,21 +10,23 @@ that are repeated.
 import java.util.Arrays;
 
 public class Find_five_repeated_in_Array {
-    private static int search_repeated_int(int[] data) {
-        int[][] frequency = new int[data.length][2];
-        for (int i : data) {
-            for (int j = i + 1; j < data.length; j++) { // search first
-                if (data[j] == data[i]) { // found
-                    return j;
+    private static int[] search_repeated_int(int[] data) {
+        int[] repeated_elements = new int[5];
+        int repeated_elements_count = 0;
+        for (int i = 0; i < data.length; i++) { // do not use for each loop
+            for (int j = i + 1; j < data.length; j++) {
+                if (data[i] == data[j]) { // repetition found
+                    repeated_elements[repeated_elements_count++] = data[j];
+                    System.out.println(STR."Repetition found for \{data[j]}");
                 }
             }
         }
-        return -1; // -1 is not a valid index, this will be returned when we do not found the desired one in the array
-    }
+        return repeated_elements;
+    } // DONE
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 2, 5};
-        System.out.println(search_repeated_int(arr));
+        int[] arr = {5, 4, 3, 2, 1, 9, 15, 94, 74, 5, 4, 3, 2, 1};
         System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(search_repeated_int(arr)));
     }
 }
