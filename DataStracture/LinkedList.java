@@ -96,7 +96,6 @@ class Node {
     } // WORKING
 
     static Node Sort_Singly_Linked_List(Node head) {
-
 /*
 //                    { // changing value only // EASY
 //                        int temp = p.value;
@@ -145,6 +144,16 @@ class Node {
             }
         }
         return head;
+    }
+
+    static void DeleteLast(Node n) {
+        Node previous = n, current = n;
+        while (current.next != null) {
+            previous = current;
+            current = current.next;
+        }
+        previous.next = null;
+//        tail = previous;
     }
 
     static Node Search_Singly_Linked_List(Node p, int key) {
@@ -204,8 +213,8 @@ class LinkedList {
 //        PrintWholeLinkedListREVERSELY(head); // DONE
 //----------------------------------------------------------
 // ============ Reversed Link List Printing ============
-        head2 = REVERSE_a_Linked_List(head2);
-        PrintWholeLinkedList(head2);
+//        head2 = REVERSE_a_Linked_List(head2);
+//        PrintWholeLinkedList(head2);
         // DONE
 //----------------------------------------------------------
 // ============= Shorted Merged Linked List ==============
@@ -224,6 +233,10 @@ class LinkedList {
 //        PENDING
 //        head2 = Sort_Singly_Linked_List(head2);
 //        PrintWholeLinkedList(head2);
+///---------------------------------------------------------
+// ============= Delete Last ==============
+        DeleteLast(head2);
+        PrintWholeLinkedList(head2);
 ///---------------------------------------------------------
 
 
