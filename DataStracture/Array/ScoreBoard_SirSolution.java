@@ -81,7 +81,7 @@ class App {
         System.out.println("Game Start");
         while (true) {
             System.out.println("Enter name (without space) and score (enter over to stop the game)");
-            name = sc.next();
+            name = sc.next(); // careful
             if (name.equals("over"))
                 break;
             score = sc.nextInt();

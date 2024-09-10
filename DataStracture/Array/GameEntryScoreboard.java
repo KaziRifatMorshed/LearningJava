@@ -58,30 +58,36 @@ class ScoreBoard {
         }
     }
 
-    void increase_board_size() { // increases board size by one and clone previous board
-        int old_board_len = this.board.length;
-        ScoreBoard new_board = new ScoreBoard(old_board_len + 1);
-        for (int i = 0; i < old_board_len; i++) {
-            new_board.board[i] = this.board[i];
-        }
-        this.board = new_board.board;
-    } // need testing
+//    static ScoreBoard increase_board_size(ScoreBoard b) { // increases board size by one and clone previous board
+//        int old_board_len = b.board.length;
+////        ScoreBoard new_board = new ScoreBoard(old_board_len + 1); // will not work
+//        GameEntry[] new_board = new GameEntry[old_board_len + 1];
+//        for (int i = 0; i < old_board_len; i++) {
+//            new_board[i] = b.board[i];
+//        }
+//        b.board = new_board;
+//        return
+//    } // need testing
 
-    void add_with_multiple_same_score(GameEntry e) {
-        int newScore = e.getScore();
-        if (board.length > numEntry || board[numEntry - 1].getScore() < newScore) {
-            if (board.length < numEntry) {
-                numEntry++;
-            }
-            int i = numEntry - 1;
-            for (; (i > 0) && (board[i - 1].getScore() <= newScore); i--) {
-                if (board[i - 1].getScore() == newScore) {
-                    increase_board_size();
-                }
-                board[i] = board[i - 1];
-            }
-        }
-    } // need testing
+//    static ScoreBoard increase_board_size(ScoreBoard b){
+//    }
+
+//    void add_with_multiple_same_score(GameEntry e) {
+//        int newScore = e.getScore();
+//        if (board.length > numEntry || board[numEntry - 1].getScore() < newScore) {
+//            if (board.length < numEntry) {
+//                numEntry++;
+//            }
+//            int i = numEntry - 1;
+//            for (; (i > 0) && (board[i - 1].getScore() <= newScore); i--) {
+//                if (board[i - 1].getScore() == newScore) {
+//                    increase_board_size();
+//                }
+//                board[i] = board[i - 1];
+//            }
+//        }
+//    } // need testing
+
 
     GameEntry remove(int index) throws IndexOutOfBoundsException {
         if (index < 0 || index > board.length) {
@@ -98,9 +104,17 @@ class ScoreBoard {
     }
 
     void Hall_of_fame() {
-        System.out.println("Scoreboard: ");
+        System.out.println(STR."Scoreboard (\{numEntry}): ");
         for (int i = 0; i < numEntry; i++) {
             System.out.println(STR."\{i + 1}. \{this.board[i]}");
+        }
+        System.out.println();
+    }
+
+    static void Hall_of_fame(ScoreBoard b) {
+        System.out.println(STR."Scoreboard (\{b.numEntry}): ");
+        for (int i = 0; i < b.numEntry; i++) {
+            System.out.println(STR."\{i + 1}. \{b.board[i]}");
         }
         System.out.println();
     }
@@ -122,9 +136,10 @@ class ScoreBoard {
             }
             int score = scanner.nextInt();
             GameEntry n = new GameEntry(name, score);
-//            board.add_to_board(n); // works
-            board.add_with_multiple_same_score(n);
-            board.Hall_of_fame();
+            board.add_to_board(n); // works
+//            board.add_with_multiple_same_score(n);
+//            board.Hall_of_fame();
+            Hall_of_fame(board);
         }
     }
 }
