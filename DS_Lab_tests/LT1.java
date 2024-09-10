@@ -31,7 +31,7 @@ class gameEntry {
 
     @Override
     public String toString() {
-        return "" + name + " " + score;
+        return name + " " + score;
     }
 }
 
@@ -60,7 +60,7 @@ class ScoreBoard {
 
     gameEntry remove(int index) throws IndexOutOfBoundsException {
         if (index < 0 || index > board.length) {
-            throw new IndexOutOfBoundsException(STR."Invalid Index \{index} has been inputted");
+            throw new IndexOutOfBoundsException("Invalid Index " + index + " has been inputted");
         }
         gameEntry to_bre_returned = board[index];
         int i = index;
@@ -77,7 +77,7 @@ class ScoreBoard {
             if (board[i] != null) {
                 if (s.equals(board[i].getName())) {
                     remove(i);
-                    i = -1; // after incrementing for "for loop" this will immediately become 0
+                    i = -1; // after incrementing it will become 0
                 }
             }
         }
@@ -94,11 +94,8 @@ class ScoreBoard {
     public static void main(String[] args) {
         ScoreBoard board = new ScoreBoard(50);
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Game Start");
-
         while (true) {
-            System.out.println("Enter name (without space) and score (enter over to stop the game): ");
-            String name = scanner.next(); // Do Not Use next()
+            String name = scanner.next();
             if (name.equals("over")) {
                 break;
             }
@@ -110,7 +107,7 @@ class ScoreBoard {
             }
             int score = scanner.nextInt();
             gameEntry n = new gameEntry(name, score);
-            board.add_to_board(n); // works
+            board.add_to_board(n);
             board.showScoreboard();
         }
     }
