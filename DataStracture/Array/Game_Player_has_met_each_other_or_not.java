@@ -23,4 +23,4 @@ class ForestGame {
     boolean has_met(int i, int j) {
         return has_met[i][j];
     }
-}
+} // done

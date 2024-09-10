@@ -3,6 +3,10 @@ package DataStracture.LinkedLists;
 class E {
     int data;
 
+    public E(int d) {
+        this.data = d;
+    }
+
     public int getData() {
         return data;
     }
@@ -11,12 +15,9 @@ class E {
         this.data = data;
     }
 
-    public E(int e) {
-        data = e;
-    }
 
     public String toString() {
-        return STR."data = \{this.data}";
+        return STR."\{this.data}";
     }
 }
 
@@ -25,8 +26,8 @@ class SinglyLinedList<E> {
         private E element;
         private Node<E> next;
 
-        public Node(E element) {
-            this.element = element;
+        public Node(E data) {
+            this.element = data;
         }
 
         public Node(E element, Node<E> next) {
@@ -34,21 +35,27 @@ class SinglyLinedList<E> {
             this.next = next;
         }
 
-        public E getElement() {
+        E getElement() {
             return element;
         }
 
-        public void setElement(E element) {
+        void setElement(E element) {
             this.element = element;
         }
 
-        public Node<E> getNext() {
+        Node<E> getNext() {
             return next;
         }
 
-        public void setNext(Node<E> next) {
+        void setNext(Node<E> next) {
             this.next = next;
         }
+
+        @Override
+        public String toString() {
+            return STR."node data = \{element}";
+        }
+
     }
 
     private Node<E> head, tail;
@@ -101,5 +108,31 @@ class SinglyLinedList<E> {
         head = new_node;
         size++;
     }
+
+    void addLast(E e) {
+        getLast().next = new Node<E>(e);
+        this.tail = getLast().next;
+    }
+
+    Node<E> removeLast() {
+        Node<E> current = head, previous = null;
+        for (; current.next != null; current = current.next) {
+            previous = current;
+        }
+        if (previous != null) {
+            previous.next = null;
+            this.tail = previous;
+        }
+        return current;
+    }
+
+    Node<E> removeFirst() {
+        Node<E> temp = this.head;
+        this.head = this.head.next;
+        return temp;
+    }
+
+
+
 
 }
