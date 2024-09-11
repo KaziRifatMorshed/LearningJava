@@ -1,26 +1,5 @@
 package DataStracture.LinkedLists;
 
-class E {
-    int data;
-
-    public E(int d) {
-        this.data = d;
-    }
-
-    public int getData() {
-        return data;
-    }
-
-    public void setData(int data) {
-        this.data = data;
-    }
-
-
-    public String toString() {
-        return STR."\{this.data}";
-    }
-}
-
 class SinglyLinedList<E> {
     public static class Node<E> {
         private E element;
@@ -132,7 +111,11 @@ class SinglyLinedList<E> {
         return temp;
     }
 
-
+    void concatLinkedList(Node<E> new_head) {
+        if (tail.next == null) {
+            tail.next = new_head;
+        }
+    }
 
 
 }
