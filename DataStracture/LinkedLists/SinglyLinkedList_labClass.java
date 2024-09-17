@@ -189,22 +189,34 @@ class SinglyLinkedList {
     } // working
 
     void deleteNode(int integer_data) {
+        /*
+         * this method delete one node (only one) from singly linked list if it gets matching in integer
+         */
         if (head.getDataObj().getData() == integer_data) {
             //delete head
             removeFirst();
-            return;
-        } else if (getLast().getDataObj().getData() == integer_data) {
+        }
+        // instead of else-if, using if is better, as, one case may appear where
+        // there are 2 element, and they are same and to be deleted
+        // so, I am avoiding all return statements
+        if (getLast().getDataObj().getData() == integer_data) {
             // delete last
             removeLast();
-            return;
-        } else { // ---------------------------------------------------------- NOT WORKING
+        } else {
             // search and delete
             Node_SLL previous = search_return_previous(integer_data);
             Node_SLL target = previous.getNext();
+            /*
             target.setNext(null);
+            previous.setNext(previous.getNext().getNext()); ultimately catching a null as i am setting null before
+            * */
             previous.setNext(previous.getNext().getNext());
-            return;
+            target.setNext(null);
         }
+    } // done
+
+    void deleteNode(Node_SLL n) {
+        // currently empty // perhaps it is useless in case of singly linked list
     }
 
 
@@ -260,8 +272,20 @@ class SinglyLinkedList {
     delete all duplicates such that each element appears only once.*/
 
     void deleteDuplicate() {
-
-    }
+//        for (Node_SLL i = head; i.next != null; i = i.getNext()) {
+        for (Node_SLL i = head; i != null; i = i.getNext()) { // i != null
+            for (Node_SLL j = i.getNext(); j != null; j = j.getNext()) { // ---------------------------- j er vumika ???
+                if (i.getNext() != null &&
+                        i.getDataObj().getData() == i.getNext().getDataObj().getData()) {
+                    i.setNext(i.getNext().getNext());
+                }
+                if (i.getNext() != null
+                        && i.getDataObj().getData() != i.getNext().getDataObj().getData()) { // since sorted
+                    break;
+                }
+            }
+        }
+    } // done
 
 
     /* Question:
@@ -269,19 +293,33 @@ class SinglyLinkedList {
     Remove every node which has a node with a greater value anywhere to the right side of it.
     * */
 
-    ///////////////////////////////////////////////////////////////////////////
+    void make_SLL_acceding_by_deleting() {
+        for (Node_SLL i = head; i != null; i = i.getNext()) { // i != null
+            for (Node_SLL j = i.getNext(); j != null; j = j.getNext()) {
+                if (i.getNext() != null &&
+                        i.getDataObj().getData() <= i.getNext().getDataObj().getData()) {
+                    i.setNext(i.getNext().getNext());
+                }
+            }
+        }
+    }
+
+///////////////////////////////////////////////////////////////////////////
 
     public static void main(String[] args) {
         SinglyLinkedList list1 = new SinglyLinkedList();
         SinglyLinkedList list2 = new SinglyLinkedList();
 
-        int[] arr1 = {9, 10, 20, 30, 40, 50};
+        int[] arr1 = {9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 20, 30, 30, 40, 50, 50, 50, 35, 50, 60, 70, 70, 80, 90, 90, 90, 90};
         int[] arr2 = {1, 2, 3, 4, 5, 33};
 
         for (int i = 0; i < arr1.length; i++) {
             list1.addLast(new data_SLL(arr1[i]));
+        }
+        for (int i = 0; i < arr2.length; i++) {
             list2.addLast(new data_SLL(arr2[i]));
         }
+
 
         list1.printList();
 //        list2.printList();
@@ -291,7 +329,10 @@ class SinglyLinkedList {
 //        sorted_list.printList();
 //        System.out.println(list1.search_return_previous(50));
 
-        list1.deleteNode(30);
+//        list1.deleteNode(30);
+//        list1.deleteDuplicate();
+//        list1.printList();
+        list1.make_SLL_acceding_by_deleting();
         list1.printList();
 
     }
