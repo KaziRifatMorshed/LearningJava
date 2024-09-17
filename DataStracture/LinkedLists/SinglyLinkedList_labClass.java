@@ -146,6 +146,53 @@ public class SinglyLinkedList_labClass {
         System.out.println();
     } // completed
 
+    ///////////////////////////////////////////////////////////////////////////
+    // -------------------------- PROBLEM SOLVING -------------------------- //
+    ///////////////////////////////////////////////////////////////////////////
+
+    /* Question:
+    You are given the heads of two 'sorted' singly linked lists list1 and list2.
+    Merge the two lists into one sorted list.*/
+
+    void sortedMerge(SinglyLinkedList_labClass list1, SinglyLinkedList_labClass list2) {
+        int len1 = list1.getSize();
+        int len2 = list2.getSize();
+
+        Node_SLL e1 = list1.head;
+        Node_SLL e2 = list2.head;
+
+        for (int i = 1; i <= (len1 + len2); i++) {
+
+            if (e1 == null) {
+                while (e2 != null) {
+                    addLast(e2.getData());
+                    e2 = e2.getNext();
+                }
+                return;
+            }
+            if (e2 == null) {
+                while (e1 != null) {
+                    addLast(e1.getData());
+                    e1 = e1.getNext();
+                }
+                return;
+            }
+            if (e1.getData() == e2.getData()) {
+                addLast(e1.getData());
+                e1 = e1.getNext();
+                e2 = e2.getNext();
+            }
+            if (e1.getData() < e2.getData()) {
+
+            } else if (e1.getData() > e2.getData()) {
+
+            }
+        }
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////
+
     public static void main(String[] args) {
         SinglyLinkedList_labClass list1 = new SinglyLinkedList_labClass();
         SinglyLinkedList_labClass list2 = new SinglyLinkedList_labClass();
@@ -160,5 +207,6 @@ public class SinglyLinkedList_labClass {
         list1.printList();
         System.out.println(list1.getSize());
         list2.printList();
+        System.out.println(list2.getSize());
     }
 }
