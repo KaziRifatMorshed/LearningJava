@@ -1,6 +1,6 @@
 package DataStracture.LinkedLists;
 
-public class SinglyLinkedList_labClass {
+class SinglyLinkedList {
     private static class data_SLL {
         private int data;
 
@@ -35,7 +35,7 @@ public class SinglyLinkedList_labClass {
             this.data = data;
         }
 
-        public data_SLL getData() {
+        public data_SLL getDataObj() {
             return data;
         }
 
@@ -60,15 +60,15 @@ public class SinglyLinkedList_labClass {
     private Node_SLL head;
     private int size;
 
-    SinglyLinkedList_labClass() {
+    SinglyLinkedList() {
         head = null;
         this.size = 0;
     }
 
-    SinglyLinkedList_labClass(Node_SLL head) {
-        this.head = head;
-        this.size = 0;
-    }
+//    SinglyLinkedList(Node_SLL head) {
+//        this.head = head;
+//        this.size = 0;
+//    }
 
     boolean isEmpty() {
         return size == 0;
@@ -93,12 +93,26 @@ public class SinglyLinkedList_labClass {
             return null; // ------------------------------------------------ I missed this
         }
         Node_SLL current = head;
-//        while (current != null || current.next != null) {
         while (current.next != null) {
             current = current.next;
         }
         return current;
     } // completed
+
+    Node_SLL removeFirst() {
+        if (!isEmpty()) {
+            Node_SLL temp = head;
+            if (size == 1) {
+                head = null;
+            } else {
+                head = head.getNext();
+                temp.setNext(null);
+            }
+            size--;
+            return temp;
+        }
+        return null;
+    }
 
     Node_SLL removeLast() {
         if (!isEmpty()) {
@@ -146,15 +160,63 @@ public class SinglyLinkedList_labClass {
         System.out.println();
     } // completed
 
+    void concatSinglyLinkedList(SinglyLinkedList new_head) {
+        Node_SLL tail = getLast();
+        if (tail.next == null) {
+            tail.setNext(new_head.head); // new_head.head
+        }
+    }
+
+    Node_SLL search(int integer_data) {
+        for (Node_SLL p = head; p.next != null; p = p.getNext()) {
+            if (p.getDataObj().getData() == integer_data) {
+                return p;
+            }
+        }
+        return null;
+    } // done
+
+    Node_SLL search_return_previous(int integer_data) {
+        if (head.next == null) {
+            return null;  // ----------------------------------------------- seems vulnerable
+        }
+        for (Node_SLL p = head; p.next != null; p = p.getNext()) {
+            if (p.next.getDataObj().getData() == integer_data) {
+                return p;
+            }
+        }
+        return null;
+    } // working
+
+    void deleteNode(int integer_data) {
+        if (head.getDataObj().getData() == integer_data) {
+            //delete head
+            removeFirst();
+            return;
+        } else if (getLast().getDataObj().getData() == integer_data) {
+            // delete last
+            removeLast();
+            return;
+        } else { // ---------------------------------------------------------- NOT WORKING
+            // search and delete
+            Node_SLL previous = search_return_previous(integer_data);
+            Node_SLL target = previous.getNext();
+            target.setNext(null);
+            previous.setNext(previous.getNext().getNext());
+            return;
+        }
+    }
+
+
     ///////////////////////////////////////////////////////////////////////////
     // -------------------------- PROBLEM SOLVING -------------------------- //
     ///////////////////////////////////////////////////////////////////////////
 
-    /* Question:
+    /* Question:                                                     Farhan Sir
     You are given the heads of two 'sorted' singly linked lists list1 and list2.
     Merge the two lists into one sorted list.*/
 
-    void sortedMerge(SinglyLinkedList_labClass list1, SinglyLinkedList_labClass list2) {
+    void sortedMerge(SinglyLinkedList list1, SinglyLinkedList list2) {
         int len1 = list1.getSize();
         int len2 = list2.getSize();
 
@@ -165,28 +227,28 @@ public class SinglyLinkedList_labClass {
 
             if (e1 == null) {
                 while (e2 != null) {
-                    addLast(e2.getData());
+                    addLast(e2.getDataObj());
                     e2 = e2.getNext();
                 }
                 return;
             }
             if (e2 == null) {
                 while (e1 != null) {
-                    addLast(e1.getData());
+                    addLast(e1.getDataObj());
                     e1 = e1.getNext();
                 }
                 return;
             }
-            if (e1.getData().getData() == e2.getData().getData()) {
-                addLast(e1.getData());
+            if (e1.getDataObj().getData() == e2.getDataObj().getData()) {
+                addLast(e1.getDataObj());
                 e1 = e1.getNext();
                 e2 = e2.getNext();
             }
-            if (e1.getData().getData() < e2.getData().getData()) {
-                addLast(e1.getData());
+            if (e1.getDataObj().getData() < e2.getDataObj().getData()) {
+                addLast(e1.getDataObj());
                 e1 = e1.getNext();
-            } else if (e1.getData().getData() > e2.getData().getData()) {
-                addLast(e2.getData());
+            } else if (e1.getDataObj().getData() > e2.getDataObj().getData()) {
+                addLast(e2.getDataObj());
                 e2 = e2.getNext();
             }
         }
@@ -197,6 +259,9 @@ public class SinglyLinkedList_labClass {
     Given the head of a 'sorted' singly linked list,
     delete all duplicates such that each element appears only once.*/
 
+    void deleteDuplicate() {
+
+    }
 
 
     /* Question:
@@ -207,8 +272,8 @@ public class SinglyLinkedList_labClass {
     ///////////////////////////////////////////////////////////////////////////
 
     public static void main(String[] args) {
-        SinglyLinkedList_labClass list1 = new SinglyLinkedList_labClass();
-        SinglyLinkedList_labClass list2 = new SinglyLinkedList_labClass();
+        SinglyLinkedList list1 = new SinglyLinkedList();
+        SinglyLinkedList list2 = new SinglyLinkedList();
 
         int[] arr1 = {9, 10, 20, 30, 40, 50};
         int[] arr2 = {1, 2, 3, 4, 5, 33};
@@ -218,10 +283,16 @@ public class SinglyLinkedList_labClass {
             list2.addLast(new data_SLL(arr2[i]));
         }
 
-//        SinglyLinkedList_labClass sorted_list = new SinglyLinkedList_labClass();
+        list1.printList();
+//        list2.printList();
+
+//        SinglyLinkedList sorted_list = new SinglyLinkedList();
 //        sorted_list.sortedMerge(list1, list2);
 //        sorted_list.printList();
+//        System.out.println(list1.search_return_previous(50));
 
+        list1.deleteNode(30);
+        list1.printList();
 
     }
 }
