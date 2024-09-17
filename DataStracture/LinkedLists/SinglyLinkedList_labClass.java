@@ -177,19 +177,32 @@ public class SinglyLinkedList_labClass {
                 }
                 return;
             }
-            if (e1.getData() == e2.getData()) {
+            if (e1.getData().getData() == e2.getData().getData()) {
                 addLast(e1.getData());
                 e1 = e1.getNext();
                 e2 = e2.getNext();
             }
-            if (e1.getData() < e2.getData()) {
-
-            } else if (e1.getData() > e2.getData()) {
-
+            if (e1.getData().getData() < e2.getData().getData()) {
+                addLast(e1.getData());
+                e1 = e1.getNext();
+            } else if (e1.getData().getData() > e2.getData().getData()) {
+                addLast(e2.getData());
+                e2 = e2.getNext();
             }
         }
-    }
+    } // done
 
+
+    /* Question:
+    Given the head of a 'sorted' singly linked list,
+    delete all duplicates such that each element appears only once.*/
+
+
+
+    /* Question:
+    You are given the head of a linked list.
+    Remove every node which has a node with a greater value anywhere to the right side of it.
+    * */
 
     ///////////////////////////////////////////////////////////////////////////
 
@@ -197,16 +210,18 @@ public class SinglyLinkedList_labClass {
         SinglyLinkedList_labClass list1 = new SinglyLinkedList_labClass();
         SinglyLinkedList_labClass list2 = new SinglyLinkedList_labClass();
 
-        int[] arr1 = {10, 20, 30, 40, 50};
-        int[] arr2 = {1, 2, 3, 4, 5};
+        int[] arr1 = {9, 10, 20, 30, 40, 50};
+        int[] arr2 = {1, 2, 3, 4, 5, 33};
 
         for (int i = 0; i < arr1.length; i++) {
             list1.addLast(new data_SLL(arr1[i]));
             list2.addLast(new data_SLL(arr2[i]));
         }
-        list1.printList();
-        System.out.println(list1.getSize());
-        list2.printList();
-        System.out.println(list2.getSize());
+
+//        SinglyLinkedList_labClass sorted_list = new SinglyLinkedList_labClass();
+//        sorted_list.sortedMerge(list1, list2);
+//        sorted_list.printList();
+
+
     }
 }
