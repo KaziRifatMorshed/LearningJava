@@ -297,7 +297,7 @@ class SinglyLinkedList {
         for (Node_SLL i = head; i != null; i = i.getNext()) { // i != null
             for (Node_SLL j = i.getNext(); j != null; j = j.getNext()) {
                 if (i.getNext() != null &&
-                        i.getDataObj().getData() <= i.getNext().getDataObj().getData()) {
+                        i.getDataObj().getData() >= i.getNext().getDataObj().getData()) {
                     i.setNext(i.getNext().getNext());
                 }
             }
@@ -310,7 +310,8 @@ class SinglyLinkedList {
         SinglyLinkedList list1 = new SinglyLinkedList();
         SinglyLinkedList list2 = new SinglyLinkedList();
 
-        int[] arr1 = {9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 20, 30, 30, 40, 50, 50, 50, 35, 50, 60, 70, 70, 80, 90, 90, 90, 90};
+        int[] arr1 = {9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 20, 30,
+                30, 40, 50, 50, 50, 35, 50, 60, 70, 70, 80, 90, 90, 90, 90};
         int[] arr2 = {1, 2, 3, 4, 5, 33};
 
         for (int i = 0; i < arr1.length; i++) {

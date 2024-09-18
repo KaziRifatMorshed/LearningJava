@@ -63,8 +63,10 @@ class DoublyLinkedList {
         }
     }
 
-    private Node_DLL header = new Node_DLL(null, null, null, "Header");
-    private Node_DLL trailer = new Node_DLL(null, null, null, "Trailer");
+    private Node_DLL header =
+            new Node_DLL(null, null, null, "Header"); // dummy
+    private Node_DLL trailer =
+            new Node_DLL(null, null, null, "Trailer"); // dummy
     private int size;
 
     private DoublyLinkedList() {
