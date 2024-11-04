@@ -1,3 +1,0 @@
-rahim 3 5.25
-karim 4 1.25
-sajal 5 6.86
